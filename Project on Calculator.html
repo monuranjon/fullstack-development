@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+	.main {
+		border:  4px solid grey;
+		width: 300px;
+		margin: 0px auto;
+	       }
+	       table {
+	       	width: 100%;
+	       }
+	       td {
+	       	width: 25%;
+	       }
+	       button {
+	       	width: 100%;
+	       	background-color: black;
+	       	color: white;
+	       	height: 70px;
+	       	font-size: 30px;
+	       }
+	       input {
+	       	width: 92%;
+	       	height: 90px;
+	       	background-color: gray;
+	       	color: white;
+	       	text-align: right;
+	       	font-size: 30px;
+	       	padding-right: 20px;
+	       	font-weight: 700px;
+
+	       }
+	       .title{
+		
+		text-align:center;
+		color:white;
+		border: solid black 2px;
+		background-color: black;
+		width: 100%;
+		height: 25px;
+		}
+		
+	</style>
+	<title></title>
+</head>
+<body>
+	<div class="main">
+		<div class = "title" ><b>calculator</b></div>
+	<table>
+			<tr>
+				<input type="tex" name="" id="input" placeholder="Enter Number">
+			</tr>
+				<td colspan="2">
+					<button onclick="clearResult()">C</button>
+				</td>
+				<td>
+					<button onclick="deleteChar()">&larr;</button>
+				</td>
+				<td>
+					<button onclick="number('/')">/</button>
+				</td>
+				<tr>
+					<td><button onclick="number('7')">7</button></td>
+					<td><button onclick="number('8')">8</button></td>
+					<td><button onclick="number('9')">9</button></td>
+					<td><button onclick="number('*')">*</button></td>
+				</tr>
+				<tr>
+					<td><button onclick="number('4')">4</button></td>
+					<td><button onclick="number('5')">5</button></td>
+					<td><button onclick="number('6')">6</button></td>
+					<td><button onclick="number('+')">+</button></td>
+
+				</tr>
+				<tr>
+					<td><button onclick="number('1')">1</button></td>
+					<td><button onclick="number('2')">2</button></td>
+					<td><button onclick="number('3')">3</button></td>
+					<td><button onclick="number('-')">-</button></td>
+				</tr>
+				<tr>
+					<td><button onclick="number('0')">0</button></td>
+					<td><button onclick="number('.')">.</button></td>
+					<td><button onclick="result()">=</button></td>
+					<td><button onclick="number('%')">%</button></td>
+				</tr>
+				
+			</tr>
+		</th>
+	</table></div>
+	<script >
+		function number(num) {
+	var result = document.getElementById("input");
+	result.value += num;
+}
+function result()
+{
+	var result = document.getElementById("input");
+	result.value = eval(result.value);
+
+}
+function clearResult()
+{
+	var result = document.getElementById("input");
+	result.value = " ";
+
+}
+function deleteChar()
+{
+	var number = document.getElementById("input");
+	var remove = number.value;
+	remove = remove.slice(0,-1);
+	number.value = remove;
+}
+	 </script>
+
+</body>
+</html>
